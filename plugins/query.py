@@ -429,12 +429,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":                        
         buttons = [[
-            InlineKeyboardButton("➕️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ ➕", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+             InlineKeyboardButton("Add Me To Your Group✨", url=f"http://t.me/{temp.U_NAME}?startgroup=true"
             ],[
-            InlineKeyboardButton("Sᴇᴀʀᴄʜ 🔎", switch_inline_query_current_chat=''), 
-            InlineKeyboardButton("Cʜᴀɴɴᴇʟ 🔈", url="https://t.me/mkn_bots_updates")
-            ],[      
             InlineKeyboardButton("Hᴇʟᴩ 🕸️", callback_data="help"),
+            InlineKeyboardButton("Main Channel 🚀", url=f"https://t.me/linuxbotstg")
+            ],[      
+
             InlineKeyboardButton("Aʙᴏᴜᴛ ✨", callback_data="about")
         ]]
         await query.edit_message_media(InputMediaPhoto(random.choice(PICS), START_MESSAGE.format(user=query.from_user.mention, bot=client.mention), enums.ParseMode.HTML), reply_markup=InlineKeyboardMarkup(buttons))
@@ -459,8 +459,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 📜', 'source')
-            ],[
+         
             InlineKeyboardButton('✘ Cʟᴏꜱᴇ', 'close_data'),
             InlineKeyboardButton('« Bᴀᴄᴋ', 'start')          
         ]]
@@ -563,7 +562,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('⟳ Rᴇꜰʀᴇꜱʜ', 'stats'),
+            InlineKeyboardButton('♻️', 'stats'),
             InlineKeyboardButton('« Bᴀᴄᴋ', 'help')           
         ]]
         total = await Media.count_documents()
@@ -573,7 +572,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         free = 536870912 - monsize
         monsize = get_size(monsize)
         free = get_size(free)
-        await query.message.edit('ʟᴏᴀᴅɪɴɢ....')
+        await query.message.edit('Fetching 🚀')
+        time.sleep(2)
         await query.edit_message_media(InputMediaPhoto(random.choice(PICS), script.STATUS_TXT.format(total, users, chats, monsize, free), enums.ParseMode.HTML), reply_markup=InlineKeyboardMarkup(buttons))
     
     elif query.data.startswith("setgs"):

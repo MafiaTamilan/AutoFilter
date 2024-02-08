@@ -33,7 +33,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention, message.from_user.username, temp.U_NAME))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton("Cʜᴀɴɴᴇʟ 🔈", url=f"https://t.me/linuxbotstg")
+             InlineKeyboardButton("Add Me To Your Group✨", url=f"http://t.me/{temp.U_NAME}?startgroup=true"
             ],[
             InlineKeyboardButton("Hᴇʟᴩ 🕸️", callback_data="help"),
             InlineKeyboardButton("Main Channel 🚀", url=f"https://t.me/linuxbotstg")
@@ -69,12 +69,12 @@ async def start(client, message):
         
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton("➕️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ ➕", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+             InlineKeyboardButton("Add Me To Your Group✨", url=f"http://t.me/{temp.U_NAME}?startgroup=true"
             ],[
-            InlineKeyboardButton("Sᴇᴀʀᴄʜ 🔎", switch_inline_query_current_chat=''), 
-            InlineKeyboardButton("Cʜᴀɴɴᴇʟ 🔈", url="https://t.me/mkn_bots_updates")
-            ],[      
             InlineKeyboardButton("Hᴇʟᴩ 🕸️", callback_data="help"),
+            InlineKeyboardButton("Main Channel 🚀", url=f"https://t.me/linuxbotstg")
+            ],[      
+
             InlineKeyboardButton("Aʙᴏᴜᴛ ✨", callback_data="about")
         ]]
         m = await message.reply_sticker("CAACAgUAAxkBAAEBvlVk7YKnYxIHVnKW2PUwoibIR2ygGAACBAADwSQxMYnlHW4Ls8gQHgQ")
